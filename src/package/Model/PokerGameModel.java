@@ -6,7 +6,7 @@ public class PokerGameModel {
     private ArrayList<Integer> numbers;
     private String value;
 
-    protected PokerGameModel() {
+    public PokerGameModel() {
         numbers = new ArrayList<>();
         value = "";
     }

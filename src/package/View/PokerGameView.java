@@ -26,13 +26,14 @@ public class PokerGameView {
 
     private PokerGameModel model;
     protected Stage stage;
-    protected Stage stage2;
-    protected Button btnAsk, btnNum;
+    public Stage stage2;
+    public Button btnAsk;
+    public Button btnNum;
     private Button btnShuf = new Button("Shuffle");
     private Button btnDeal = new Button("Deal");
     private Button btnQuit = new Button("Quit");
     protected Label label1, label2;
-    protected TextField txtplayers;
+    public TextField txtplayers;
     protected BorderPane pane1;
     protected GridPane panepop;
     private Label lblDeck = new Label("");
@@ -94,5 +95,7 @@ public class PokerGameView {
     public Stage getStage() {
         return stage;
     }
+
+
 
 }

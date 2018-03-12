@@ -27,9 +27,9 @@ public class PokerGame extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        //model = new PokerGameModel();
+        model = new PokerGameModel();
         view = new PokerGameView(primaryStage, model);
-        //controller = new PokerGameController(model, view);
+        controller = new PokerGameController(model, view);
         view.start();
     }
 
