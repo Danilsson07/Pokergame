@@ -4,6 +4,7 @@ import Model.PokerGameModel;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
@@ -43,29 +44,33 @@ public class PokerGameView {
         this.stage = stage;
         this.model = model;
 
+
+        HBox menuBox = new HBox();
         btnAsk = new Button("Players");
-        HBox menuBox = new HBox(btnAsk);
+        menuBox.getChildren().add(btnAsk);
         HBox playerBox = new HBox();
         HBox controlBox = new HBox(5, lblDeck, spacer, btnShuf, btnDeal, btnQuit);
 
+        BorderPane pane = new BorderPane();
+        pane.setPadding(new Insets(20));
+        pane.setBottom(menuBox);
 
 
 
 
 
 
-
-        VBox root = new VBox(menuBox, playerBox, controlBox);
+        //VBox root = new VBox(menuBox, playerBox, controlBox);
 
         panepop = new GridPane();
-        label2 = new Label("How many Players joint the game?");
+        label2 = new Label("How many Players?");
         txtplayers = new TextField();
         btnNum = new Button("Accept!");
         panepop.add(label2, 0, 0);
         panepop.add(txtplayers, 1, 0);
         panepop.add(btnNum, 1, 1);
 
-        Scene scene1 = new Scene(root, 350, 130);
+        Scene scene1 = new Scene(pane, 350, 130);
         Scene scene2 = new Scene(panepop, 350, 130);
 
         stage2 = new Stage();
