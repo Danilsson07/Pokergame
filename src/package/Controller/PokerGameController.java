@@ -12,7 +12,7 @@ public class PokerGameController {
     public PokerGameController(PokerGameModel model, PokerGameView view) {
         this.model = model;
         this.view = view;
-
+        
 		 /*view.btn0.setOnAction((event) -> {
 		 model.addValue(0);
 		 String newText = model.getValue();
@@ -36,14 +36,7 @@ public class PokerGameController {
             int number = Integer.parseInt(view.txtplayers.getText());
             //view.createPlayerPane(number);
         });
-
-        //comment test
-
-
-
-
-
-
+        
         // register ourselves to handle window-closing event
         view.getStage().setOnCloseRequest((event) -> {
             view.stop();
