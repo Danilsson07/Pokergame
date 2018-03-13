@@ -1,10 +1,12 @@
 package View;
 
+import Model.Card;
 import Model.Player;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
-import java.awt.*;
+
 
 public class PlayerView extends BorderPane {
     private Label name = new Label();
@@ -15,7 +17,11 @@ public class PlayerView extends BorderPane {
 
     public PlayerView (){
         super();
-        //this.getChildren().addAll(name,cardBox,evaluation);
+        this.setTop(name);
+    }
+
+    public void Card (Card cards){
+
     }
 
 }

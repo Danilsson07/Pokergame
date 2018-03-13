@@ -26,13 +26,10 @@ import javafx.stage.Stage;
 public class PokerGameView {
 
     private PokerGameModel model;
+    private DefaultMenu dMenu;
     protected Stage stage;
     public Stage stage2;
-    public Button btnAsk;
-    public Button btnNum;
-    private Button btnShuf = new Button("Shuffle");
-    private Button btnDeal = new Button("Deal");
-    private Button btnQuit = new Button("Quit");
+    public Button btnAsk,btnNum;
     protected Label label1, label2;
     public TextField txtplayers;
     protected BorderPane pane1;
@@ -46,31 +43,28 @@ public class PokerGameView {
 
 
         HBox menuBox = new HBox();
+        btnNum = new Button("Accept!");
         btnAsk = new Button("Players");
-        menuBox.getChildren().add(btnAsk);
-        HBox playerBox = new HBox();
-        HBox controlBox = new HBox(5, lblDeck, spacer, btnShuf, btnDeal, btnQuit);
+        label2 = new Label("Players?");
+        txtplayers = new TextField("Players?");
+
+
+
+        menuBox.getChildren().addAll(txtplayers, btnNum);
+
+
+        dMenu = new DefaultMenu();
 
         BorderPane pane = new BorderPane();
         pane.setPadding(new Insets(20));
-        pane.setBottom(menuBox);
+        pane.setBottom(dMenu);
 
 
-
-
-
-
-        //VBox root = new VBox(menuBox, playerBox, controlBox);
 
         panepop = new GridPane();
-        label2 = new Label("How many Players?");
-        txtplayers = new TextField();
-        btnNum = new Button("Accept!");
-        panepop.add(label2, 0, 0);
-        panepop.add(txtplayers, 1, 0);
-        panepop.add(btnNum, 1, 1);
 
-        Scene scene1 = new Scene(pane, 350, 130);
+
+        Scene scene1 = new Scene(pane, 600, 400);
         Scene scene2 = new Scene(panepop, 350, 130);
 
         stage2 = new Stage();
@@ -84,10 +78,6 @@ public class PokerGameView {
 
     }
 
-    public VBox createPlayerPane(int number) {
-
-        return null;
-    }
 
     public void start() {
         stage.show();

@@ -2,35 +2,35 @@ package Model;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import Model.Suit;
+
 
 
 public class Deck {
-    private Suit suit;
-    private Rank rank;
+    private Card.Suit suit;
+    private Card.Rank rank;
     private final ArrayList<Card> allCards;
 
     public Deck() {
         this.allCards = new ArrayList<>();
-        //shuffle();
+        shuffle();
     }
 
     public int getCardsleft() {
         return allCards.size();
     }
 
-    /*public void shuffle() {
+    public void shuffle() {
         allCards.clear();
 
         for (Card.Suit suit : Card.Suit.values()) {
             for (Card.Rank rank : Card.Rank.values()) {
-                Card card = new Card(suit, rank);
+                Card card = new Card(rank, suit);
                 allCards.add(card);
             }
         }
 
         Collections.shuffle(allCards);
-    }*/
+    }
 
     public Card dealCard() {
         if (allCards.size() > 0) {
