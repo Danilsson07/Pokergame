@@ -1,22 +1,19 @@
 package Model;
 
+import javafx.beans.property.SimpleIntegerProperty;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
 
 
 public class Deck {
-    private Card.Suit suit;
-    private Card.Rank rank;
     private final ArrayList<Card> allCards;
+    private final SimpleIntegerProperty leftcards = new SimpleIntegerProperty();
 
     public Deck() {
         this.allCards = new ArrayList<>();
         shuffle();
-    }
-
-    public int getCardsleft() {
-        return allCards.size();
     }
 
     public void shuffle() {
@@ -40,6 +37,18 @@ public class Deck {
         } else {
             return null;
         }
+    }
+
+    public SimpleIntegerProperty getCardsRemainingProperty() {
+        return leftcards;
+    }
+
+    public int getCardsleft() {
+        return allCards.size();
+    }
+
+    public int getCardsleft1() {
+        return allCards.size();
     }
 }
 

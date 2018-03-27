@@ -23,17 +23,17 @@ public class Card {
         KING(13),
         ACE(14);
 
-        private int Rank;
+        private int Value;
 
         private Rank (int value)
         {
-            this.Rank = value;
+            this.Value = value;
         }
 
-        public int getRank() {
-            return Rank;
+        public int getValue() {
+            return Value;
         }
-    }
+    };
     private Suit suit;
     private Rank rank;
 
@@ -58,5 +58,11 @@ public class Card {
         this.rank = rank;
     }
 
+    public String RanktoString() {
+        return rank.toString();
+    }
 
+    public String SuittoString() {
+        return suit.toString();
+    }
 }
